@@ -1,0 +1,253 @@
+@import "tailwindcss";
+
+:root {
+  --bg-base: #0a1317;
+  --bg-soft: #112127;
+  --bg-elevated: #162c35cc;
+  --card-bg: #10242db3;
+  --card-border: #39c6b433;
+  --text-main: #e2f1ef;
+  --text-muted: #9eb8b5;
+  --text-subtle: #73908d;
+  --accent: #39c6b4;
+  --accent-strong: #1ce0bc;
+  --ok: #3fd58f;
+  --warn: #ffd166;
+  --danger: #ff6f61;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  color: var(--text-main);
+  background: radial-gradient(1200px 400px at 20% -10%, #164a54 0%, transparent 50%), radial-gradient(1000px 500px at 95% 0%, #26435a 0%, transparent 55%), linear-gradient(130deg, var(--bg-base) 0%, var(--bg-soft) 65%, #1d2f3a 100%);
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  padding: 1rem;
+  overflow: visible;
+}
+
+.background-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(40px);
+  pointer-events: none;
+  opacity: 0.25;
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+.background-orb-one {
+  width: 260px;
+  height: 260px;
+  top: -90px;
+  left: -60px;
+  background: #2aa5c6;
+}
+
+.background-orb-two {
+  width: 320px;
+  height: 320px;
+  right: -140px;
+  bottom: -120px;
+  background: #45d8aa;
+  animation-delay: 0.7s;
+}
+
+.app-header {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 1.5rem;
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  background: var(--bg-elevated);
+  backdrop-filter: blur(12px);
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-icon-wrap {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.5rem;
+  background: linear-gradient(140deg, var(--accent), #4cc9f0);
+  color: #022b34;
+  box-shadow: 0 0 22px #1ce0bc44;
+}
+
+.brand-name {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-main);
+}
+
+.status-group {
+  margin-left: auto;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.73rem;
+  color: #caf7f0;
+  border: 1px solid #44c5b766;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  background: #12323aaa;
+}
+
+.status-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--ok);
+  box-shadow: 0 0 12px #3fd58faa;
+  animation: pulseDot 1.4s ease-in-out infinite;
+}
+
+.reset-button {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  padding: 0.43rem 0.78rem;
+  border-radius: 999px;
+  border: 1px solid #4bc8bb55;
+  color: #c3faf2;
+  background: #12313a;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.reset-button:hover {
+  transform: translateY(-1px);
+  border-color: #61e5d7;
+  background: #15414b;
+}
+
+.panel-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.panel-card {
+  min-height: 320px;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  box-shadow: 0 20px 40px #04161b55;
+  backdrop-filter: blur(10px);
+}
+
+.panel-title {
+  font-family: "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  color: #9ad9d0;
+}
+
+.scroll-panel {
+  scrollbar-width: thin;
+  scrollbar-color: #3baea0 #10242d;
+}
+
+.scroll-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-panel::-webkit-scrollbar-thumb {
+  background: #3baea0;
+  border-radius: 999px;
+}
+
+.scroll-panel::-webkit-scrollbar-track {
+  background: #10242d;
+  border-radius: 999px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes floatOrb {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out;
+}
+
+@media (min-width: 1024px) {
+  .app-shell {
+    padding: 1.1rem;
+  }
+
+  .panel-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    min-height: calc(100vh - 104px);
+  }
+
+  .panel-card {
+    min-height: auto;
+  }
+}
