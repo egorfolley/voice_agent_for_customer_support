@@ -6,10 +6,7 @@ The app listens to a customer request, runs an OpenAI tool-calling loop against 
 
 ## Demo video
 
-<video controls width="900" src="docs/VoiceAI_Agent.mp4">
-  Your browser does not support embedded videos. You can download it here:
-  <a href="docs/VoiceAI_Agent.mp4">VoiceAI_Agent.mp4</a>
-</video>
+*Demo video shows that you an talk to agent for your order support. Github doesn't allows to show videos - so video is in "docs/" folder.*
 
 ## Usage
 
