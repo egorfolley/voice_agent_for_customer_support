@@ -6,7 +6,7 @@ The app listens to a customer request, runs an OpenAI tool-calling loop against 
 
 ## Demo video
 
-*Demo video shows that you an talk to agent for your order support. Github doesn't allows to show videos - so video is in "docs/" folder.*
+*Demo video shows that you an talk to agent for your order support. Github doesn't allows to show videos - so video is in ```docs/``` folder.*
 
 ## Usage
 
